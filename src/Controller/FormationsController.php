@@ -5,15 +5,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ProstageController extends AbstractController
+class FormationsController extends AbstractController
 {
     /**
-     * @Route("/", name="prostage")
+     * @Route("/formations", name="formations")
      */
     public function index()
     {
-        return $this->render('prostage/index.html.twig', [
-            'controller_name' => 'ProstageController',
+        return $this->render('formations/index.html.twig', [
+            'controller_name' => 'FormationsController',
         ]);
     }
 }
