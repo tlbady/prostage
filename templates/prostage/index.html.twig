@@ -1,17 +1,47 @@
 {% extends 'base.html.twig' %}
 
 {% block contenu %}
-<h1>Bienvenue sur la page d'accueil de Prostages</h1>
-
-<ul>
-	<li>
-		<a href="{{path('stages', {id:1})}}">Stage 1</a>
-	</li>
-	<li>
-		<a href="{{path('stages', {id:2})}}">Stage 2</a>
-	</li>
-	<li>
-		<a href="{{path('stages', {id:5})}}">Stage 5</a>
-	</li>
-</ul>
+<div class="row">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>
+					Liste des stages
+				</h3>
+			</div>
+		</div>
+		<div class="row liste-stages-titres">
+			<div class="col-md-6">
+				<p>Nom</p>
+			</div>
+			<div class="col-md-2">
+				<p>Entreprise</p>
+			</div>
+			<div class="col-md-2">
+				<p>Formation</p>
+			</div>
+			<div class="col-md-2">
+				<p>Durée</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row liste-stages">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-6">
+				<p>Stage de développeur</p>
+			</div>
+			<div class="col-md-2">
+				<p>Total</p>
+			</div>
+			<div class="col-md-2">
+				<p>DUT Info</p>
+			</div>
+			<div class="col-md-2">
+				<p>15 Avril au 18 Mai</p>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}

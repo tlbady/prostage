@@ -1,0 +1,42 @@
+/*EN-TETE*/
+.en-tete
+{
+	font-size: 120%;
+	font-weight: bold;
+	text-align: center;
+	background-color: lightblue;
+}
+
+/*MENU*/
+.menu
+{
+	border-radius: 8px;
+}
+
+.menu, .menu button
+{
+	background-color: silver;
+	border-radius: 0px;
+	border: 0px;
+}
+
+.menu button
+{
+	margin-left: 0px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.menu [class*=col-]
+{
+	padding: 0px;
+	border: 1px solid black;
+	border-radius: 8px;
+}
+
+/*LISTE DES STAGES*/
+.liste-stages-titres [class*=col-]
+{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
