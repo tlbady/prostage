@@ -2,11 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}ProStage{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    	{% block menu %}
+    		<a href="{{path('prostage')}}">Accueil</a> <a href="{{path('formations')}}">Formations</a> <a href="{{path('entreprises')}}">Entreprises</a>
+    	{% endblock %}
+        {% block contenu %}
+        {% endblock %}
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>

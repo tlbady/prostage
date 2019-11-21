@@ -1,14 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProstageController!{% endblock %}
+{% block contenu %}
+<h1>Bienvenue sur la page d'accueil de Prostages</h1>
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Bienvenue sur la page d'accueil de Prostages</h1>
-</div>
+<ul>
+	<li>
+		<a href="{{path('stages', {id:1})}}">Stage 1</a>
+	</li>
+	<li>
+		<a href="{{path('stages', {id:2})}}">Stage 2</a>
+	</li>
+	<li>
+		<a href="{{path('stages', {id:5})}}">Stage 5</a>
+	</li>
+</ul>
 {% endblock %}
