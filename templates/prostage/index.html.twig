@@ -2,46 +2,62 @@
 
 {% block contenu %}
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-1">
+	</div>
+	<div class="col-md-10">
 		<div class="row">
 			<div class="col-md-12">
-				<h3>
+				<h2>
 					Liste des stages
-				</h3>
+				</h2>
 			</div>
 		</div>
 		<div class="row liste-stages-titres">
 			<div class="col-md-6">
-				<p>Nom</p>
+				<h3>Nom</h3>
 			</div>
 			<div class="col-md-2">
-				<p>Entreprise</p>
+				<h3>Entreprise</h3>
 			</div>
 			<div class="col-md-2">
-				<p>Formation</p>
+				<h3>Formation</h3>
 			</div>
 			<div class="col-md-2">
-				<p>Durée</p>
+				<h3>Durée</h3>
+			</div>
+		</div>
+		<div class="row liste-stages">
+			<div class="col-md-12">
+
+				{% set numero = 'impair' %}
+				{% for noStage, stage in listeStages %}
+					<a href="/stages/{{ noStage }}">
+						<div class="row stage-row-{{ numero }}">
+						<div class="col-md-6 stage-col-impair">
+							<p>{{ stage['nom'] }}</p>
+						</div>
+						<div class="col-md-2 stage-col-pair">
+							<p>{{ stage['entreprise'] }}</p>
+						</div>
+						<div class="col-md-2 stage-col-impair">
+							<p>{{ stage['formation'] }}</p>
+						</div>
+						<div class="col-md-2 stage-col-pair">
+							<p>{{ stage['duree'] }}</p>
+						</div>
+					</div>
+					</a>
+
+					{% if numero == 'impair' %}
+						{% set numero = 'pair' %}
+					{% else %}
+						{% set numero = 'impair' %}
+					{% endif %}
+				{% endfor %}
 			</div>
 		</div>
 	</div>
-</div>
-<div class="row liste-stages">
-	<div class="col-md-12">
-		<div class="row">
-			<div class="col-md-6">
-				<p>Stage de développeur</p>
-			</div>
-			<div class="col-md-2">
-				<p>Total</p>
-			</div>
-			<div class="col-md-2">
-				<p>DUT Info</p>
-			</div>
-			<div class="col-md-2">
-				<p>15 Avril au 18 Mai</p>
-			</div>
-		</div>
+	<div class="col-md-1">
 	</div>
 </div>
 {% endblock %}

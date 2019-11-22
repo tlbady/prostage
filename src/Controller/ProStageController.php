@@ -12,7 +12,13 @@ class ProstageController extends AbstractController
      */
     public function index()
     {
-        return $this->render('prostage/index.html.twig');
+        $listeStages = [
+            1 => ["nom" => "Stage de développeur", "entreprise" => "Total", "formation" => "DUT Info", "duree" => "15 Avril au 18 Mai"],
+            2 => ["nom" => "Stage de développeur web", "entreprise" => "V&B", "formation" => "DUT Info", "duree" => "15 Avril au 18 Mai"]
+        ];
+        return $this->render('prostage/index.html.twig', [
+            "listeStages" => $listeStages
+        ]);
     }
 
     /**
@@ -36,8 +42,13 @@ class ProstageController extends AbstractController
      */
     public function stages(int $id)
     {
+        $listeStages = [
+            1 => ["nom" => "Stage de développeur", "entreprise" => "Total", "formation" => "DUT Info", "duree" => "15 Avril au 18 Mai"],
+            2 => ["nom" => "Stage de développeur web", "entreprise" => "V&B", "formation" => "DUT Info", "duree" => "15 Avril au 18 Mai"]
+        ];
         return $this->render('prostage/stages.html.twig', [
             'id_stage' => $id,
+            'stage' => $listeStages[$id]
         ]);
     }
 }

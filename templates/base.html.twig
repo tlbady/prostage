@@ -14,7 +14,7 @@
     {% endblock %}
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
 
         <!-- TEXTE DU HAUT -->
         {% block header %}
@@ -49,7 +49,13 @@
         {% endblock %}
 
         <!-- CONTENU DE LA PAGE -->
+        <div class="row">
+                <div class="col-12">
+                    <br /><br />
+                </div>
+            </div>
         {% block contenu %}
+
         {% endblock %}
 
         <!-- PIED DE PAGE -->

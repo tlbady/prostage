@@ -1,18 +1,17 @@
 /*EN-TETE*/
 .en-tete
 {
-	font-size: 120%;
-	font-weight: bold;
 	text-align: center;
 	background-color: lightblue;
 }
 
-/*MENU*/
-.menu
+.en-tete h1
 {
-	border-radius: 8px;
+	font-size: 600%;
+	font-weight: bold;
 }
 
+/*MENU*/
 .menu, .menu button
 {
 	background-color: silver;
@@ -22,21 +21,83 @@
 
 .menu button
 {
-	margin-left: 0px;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	border-right: 2px solid black;
+	border-bottom-left-radius: 8px;
+}
+
+.menu
+{
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .menu [class*=col-]
 {
 	padding: 0px;
 	border: 1px solid black;
-	border-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 /*LISTE DES STAGES*/
+
+.liste-stages-titres
+{
+	background-color: silver;
+	border: 1px solid black;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
 .liste-stages-titres [class*=col-]
 {
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	/*border-left: 1px solid black;
+	border-right: 1px solid black;*/
+}
+
+.liste-stages-titres .col-md-2
+{
+	text-align: center;
+}
+
+.liste-stages
+{
+	border: 1px solid black;
+}
+
+.liste-stages a, .liste-stages p
+{
+	color: black;
+	vertical-align: middle;
+}
+
+.liste-stages a:hover
+{
+	text-decoration: none;
+}
+
+.stage-row-pair .stage-col-pair
+{
+	background-color: dimgrey;
+}
+
+.stage-row-pair .stage-col-impair
+{
+	background-color: grey;
+}
+
+.stage-row-impair .stage-col-pair
+{
+	background-color: darkgrey;
+}
+
+.stage-row-impair .stage-col-impair
+{
+	background-color: silver;
+}
+
+/*PAGE DE STAGES*/
+.elements-du-stage [class*=col-]
+{
+	border: 1px solid silver;
 }
