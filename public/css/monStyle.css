@@ -43,19 +43,23 @@
 
 .liste-stages-titres
 {
-	background-color: silver;
+	background-color: whitesmoke;
 	border: 1px solid black;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
 
-.liste-stages-titres [class*=col-]
+.liste-stages-titres p
 {
-	/*border-left: 1px solid black;
-	border-right: 1px solid black;*/
+	font-size: 120%;
 }
 
-.liste-stages-titres .col-md-2
+.liste-stages-titres [class*=col-]
+{
+	border-left: 1px solid darkslategray;
+}
+
+.liste-stages-titres .col-2 p
 {
 	text-align: center;
 }
@@ -63,6 +67,11 @@
 .liste-stages
 {
 	border: 1px solid black;
+}
+
+.liste-stages .col-2 p
+{
+	text-align: center;
 }
 
 .liste-stages a, .liste-stages p
