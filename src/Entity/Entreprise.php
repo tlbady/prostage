@@ -31,11 +31,6 @@ class Entreprise
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $contact;
-
-    /**
-     * @ORM\Column(type="string", length=10)
-     */
     private $numTel;
 
     /**
