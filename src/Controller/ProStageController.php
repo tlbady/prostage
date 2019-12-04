@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Stage;
+use App\Entity\Entreprise;
+use App\Entity\Formation;
+
 
 class ProstageController extends AbstractController
 {
@@ -27,8 +30,11 @@ class ProstageController extends AbstractController
     public function entreprises()
     {
         $listeStages = $this->getDoctrine()->getRepository(Stage::class)->recupererStagesParEntreprise();
+
+        $listeEntreprises = $this->getDoctrine()->getRepository(Entreprise::class)->recupererListeEntreprises();
         
         return $this->render('prostage/entreprises.html.twig', [
+            "listeEntreprises" => $listeEntreprises,
             "listeStages" => $listeStages
         ]);
     }
@@ -39,8 +45,11 @@ class ProstageController extends AbstractController
     public function formations()
     {
         $listeStages = $this->getDoctrine()->getRepository(Stage::class)->recupererStagesParFormation();
+
+        $listeFormations = $this->getDoctrine()->getRepository(Formation::class)->recupererListeFormations();
         
         return $this->render('prostage/formations.html.twig', [
+            "listeFormations" => $listeFormations,
             "listeStages" => $listeStages
         ]);
     }

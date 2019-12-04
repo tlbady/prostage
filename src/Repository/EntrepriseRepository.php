@@ -19,6 +19,21 @@ class EntrepriseRepository extends ServiceEntityRepository
         parent::__construct($registry, Entreprise::class);
     }
 
+    public function recupererListeEntreprises(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+        SELECT id, nom
+        FROM entreprise
+        ORDER BY nom';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+    // returns an array of arrays (i.e. a raw data set)
+        return $stmt->fetchAll();
+    }
+
     // /**
     //  * @return Entreprise[] Returns an array of Entreprise objects
     //  */

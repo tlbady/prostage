@@ -54,9 +54,10 @@
 	font-size: 120%;
 }
 
-.liste-stages-titres [class*=col-]
+.liste-stages-titre
 {
 	border-left: 1px solid darkslategray;
+	border-right: 1px solid darkslategray;
 }
 
 .liste-stages-titres .col-2 p
@@ -104,6 +105,16 @@
 {
 	background-color: silver;
 }
+
+/* LISTE DES STAGES PAR ENTREPRISES */
+.nom-entreprise
+{
+	border: 1px solid black;
+	padding: 5px;
+	border-radius: 15px;
+	text-align: center;
+}
+
 
 /*PAGE DE STAGES*/
 .elements-du-stage [class*=col-]

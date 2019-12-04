@@ -8,54 +8,68 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h2>
-					Liste des stages par formations
+					Liste des stages par Entreprise
 				</h2>
 			</div>
 		</div>
-		<div class="row liste-stages-titres">
-			<div class="col-6">
-				<p>Nom</p>
-			</div>
-			<div class="col-2">
-				<p>Entreprise</p>
-			</div>
-			<div class="col-2">
-				<p>Formation</p>
-			</div>
-			<div class="col-2">
-				<p>Durée</p>
-			</div>
-		</div>
-		<div class="row liste-stages">
+	{% for formation in listeFormations %}
+		<div class="row">
 			<div class="col-md-12">
-
-				{% set numero = 'impair' %}
-				{% for stage in listeStages %}
-					<a href="/stages/{{ stage['id'] }}">
-						<div class="row stage-row-{{ numero }}">
-						<div class="col-6 stage-col-impair">
-							<p>{{ stage['titre'] }}</p>
-						</div>
-						<div class="col-2 stage-col-pair">
-							<p>{{ stage['nomEntreprise'] }}</p>
-						</div>
-						<div class="col-2 stage-col-impair">
-							<p>{{ stage['nomFormation'] }}</p>
-						</div>
-						<div class="col-2 stage-col-pair">
-							<p>du {{ stage['date_debut'] }} au {{ stage['date_fin'] }}</p>
-						</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p><br /></p>
+						<h3 class="nom-entreprise">{{ formation['type'] }}</h3>
 					</div>
-					</a>
+				</div>
+				<div class="row liste-stages-titres">
+					<div class="col-6">
+						<p>Nom</p>
+					</div>
+					<div class="col-2 liste-stages-titre">
+						<p>Entreprise</p>
+					</div>
+					<div class="col-2 liste-stages-titre">
+						<p>Formation</p>
+					</div>
+					<div class="col-2">
+						<p>Durée</p>
+					</div>
+				</div>
+				<div class="row liste-stages">
+					<div class="col-md-12">
 
-					{% if numero == 'impair' %}
-						{% set numero = 'pair' %}
-					{% else %}
 						{% set numero = 'impair' %}
-					{% endif %}
-				{% endfor %}
+						{% for stage in listeStages %}
+							{% if stage['nomFormation'] == formation['type'] %}
+								<a href="/stages/{{ stage['id'] }}">
+									<div class="row stage-row-{{ numero }}">
+										<div class="col-6 stage-col-impair">
+											<p>{{ stage['titre'] }}</p>
+										</div>
+										<div class="col-2 stage-col-pair">
+											<p>{{ stage['nomEntreprise'] }}</p>
+										</div>
+										<div class="col-2 stage-col-impair">
+											<p>{{ stage['nomFormation'] }}</p>
+										</div>
+										<div class="col-2 stage-col-pair">
+											<p>du {{ stage['date_debut'] }} au {{ stage['date_fin'] }}</p>
+										</div>
+									</div>
+								</a>
+
+								{% if numero == 'impair' %}
+									{% set numero = 'pair' %}
+								{% else %}
+									{% set numero = 'impair' %}
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
 			</div>
 		</div>
+	{% endfor %}
 	</div>
 	<div class="col-md-1">
 	</div>

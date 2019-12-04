@@ -19,6 +19,21 @@ class FormationRepository extends ServiceEntityRepository
         parent::__construct($registry, Formation::class);
     }
 
+     public function recupererListeFormations(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+        SELECT id, type
+        FROM formation
+        ORDER BY type';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+    // returns an array of arrays (i.e. a raw data set)
+        return $stmt->fetchAll();
+    }
+
     // /**
     //  * @return Formation[] Returns an array of Formation objects
     //  */
