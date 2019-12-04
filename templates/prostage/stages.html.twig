@@ -7,13 +7,13 @@
 <div class="col-md-10">
 	<div class="row">
 		<div class="col-md-6">
-		<h3>{{ stage['nom'] }}</h3>
+		<h3>{{ stage['titre'] }}</h3>
 	</div>
 	<div class="col-md-3">
-		<h3>{{ stage['entreprise'] }}</h3>
+		<h3>{{ stage['nomEntreprise'] }}</h3>
 	</div>
 	<div class="col-md-3">
-		<h3>{{ stage['formation'] }}</h3>
+		<h3>{{ stage['nomFormation'] }}</h3>
 	</div>
 </div>
 <div class="row">
@@ -24,9 +24,7 @@
 <div class="row elements-du-stage">
 		<div class="col-md-6">
 			<p>
-				[Description<br>
-				sur plusieurs<br>
-				lignes]
+				{{ stage['description'] }}
 			</p>
 		</div>
 		<div class="col-md-6">
@@ -34,15 +32,12 @@
 				<div class="col-md-6">
 				</div>
 				<div class="col-md-6">
-					<p>{{ stage['duree'] }}</p>
+					<p>du {{ stage['date_debut'] }} au {{ stage['date_fin'] }}</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<p>
-						[Les prérequis<br>
-						du stage]
-					</p>
+					<p>contact : {{ stage['contact'] }}</p>
 				</div>
 			</div>
 		</div>

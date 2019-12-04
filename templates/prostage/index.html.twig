@@ -30,20 +30,20 @@
 			<div class="col-md-12">
 
 				{% set numero = 'impair' %}
-				{% for noStage, stage in listeStages %}
-					<a href="/stages/{{ noStage }}">
+				{% for stage in listeStages %}
+					<a href="/stages/{{ stage['id'] }}">
 						<div class="row stage-row-{{ numero }}">
 						<div class="col-6 stage-col-impair">
-							<p>{{ stage['nom'] }}</p>
+							<p>{{ stage['titre'] }}</p>
 						</div>
 						<div class="col-2 stage-col-pair">
-							<p>{{ stage['entreprise'] }}</p>
+							<p>{{ stage['nomEntreprise'] }}</p>
 						</div>
 						<div class="col-2 stage-col-impair">
-							<p>{{ stage['formation'] }}</p>
+							<p>{{ stage['nomFormation'] }}</p>
 						</div>
 						<div class="col-2 stage-col-pair">
-							<p>{{ stage['duree'] }}</p>
+							<p>du {{ stage['date_debut'] }} au {{ stage['date_fin'] }}</p>
 						</div>
 					</div>
 					</a>

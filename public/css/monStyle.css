@@ -108,5 +108,5 @@
 /*PAGE DE STAGES*/
 .elements-du-stage [class*=col-]
 {
-	border: 1px solid silver;
+	/* border: 1px solid silver; */
 }

@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+use App\Entity\Stage;
+
 class ProstageController extends AbstractController
 {
     /**
@@ -12,10 +14,8 @@ class ProstageController extends AbstractController
      */
     public function index()
     {
-        $listeStages = [
-            1 => ["nom" => "Stage de développeur", "entreprise" => "Total", "formation" => "DUT Info", "duree" => "15 Avril au 18 Mai"],
-            2 => ["nom" => "Stage de développeur web", "entreprise" => "V&B", "formation" => "DUT Info", "duree" => "15 Avril au 18 Mai"]
-        ];
+        $listeStages = $this->getDoctrine()->getRepository(Stage::class)->recupererListeStages();
+        
         return $this->render('prostage/index.html.twig', [
             "listeStages" => $listeStages
         ]);
@@ -26,7 +26,11 @@ class ProstageController extends AbstractController
      */
     public function entreprises()
     {
-        return $this->render('prostage/entreprises.html.twig');
+        $listeStages = $this->getDoctrine()->getRepository(Stage::class)->recupererStagesParEntreprise();
+        
+        return $this->render('prostage/entreprises.html.twig', [
+            "listeStages" => $listeStages
+        ]);
     }
 
     /**
@@ -34,7 +38,11 @@ class ProstageController extends AbstractController
      */
     public function formations()
     {
-        return $this->render('prostage/formations.html.twig');
+        $listeStages = $this->getDoctrine()->getRepository(Stage::class)->recupererStagesParFormation();
+        
+        return $this->render('prostage/formations.html.twig', [
+            "listeStages" => $listeStages
+        ]);
     }
 
     /**
@@ -42,13 +50,9 @@ class ProstageController extends AbstractController
      */
     public function stages(int $id)
     {
-        $listeStages = [
-            1 => ["nom" => "Stage de développeur", "entreprise" => "Total", "formation" => "DUT Info", "duree" => "15 Avril au 18 Mai"],
-            2 => ["nom" => "Stage de développeur web", "entreprise" => "V&B", "formation" => "DUT Info", "duree" => "15 Avril au 18 Mai"]
-        ];
+        $stage = $this->getDoctrine()->getRepository(Stage::class)->recupererStage($id);
         return $this->render('prostage/stages.html.twig', [
-            'id_stage' => $id,
-            'stage' => $listeStages[$id]
+            'stage' => $stage[0]
         ]);
     }
 }
