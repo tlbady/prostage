@@ -7,13 +7,17 @@
 <div class="col-md-10">
 	<div class="row">
 		<div class="col-md-6">
-		<h3>{{ stage['titre'] }}</h3>
+		<h3>{{ stage.titre }}</h3>
 	</div>
 	<div class="col-md-3">
-		<h3>{{ stage['nomEntreprise'] }}</h3>
+		<h3>{{ stage.entreprise.nom }}</h3>
 	</div>
 	<div class="col-md-3">
-		<h3>{{ stage['nomFormation'] }}</h3>
+		<h3>
+			{% for formation in stage.formations %}
+				{{ formation.type }}
+			{% endfor %}
+		</h3>
 	</div>
 </div>
 <div class="row">
@@ -24,27 +28,28 @@
 <div class="row elements-du-stage">
 		<div class="col-md-6">
 			<p>
-				{{ stage['description'] }}
+				{{ stage.description }}
 			</p>
 		</div>
 		<div class="col-md-6">
 			<div class="row">
 				<div class="col-md-6">
+					<p>contact : {{ stage.contact }}</p>
 				</div>
 				<div class="col-md-6">
-					<p>du {{ stage['date_debut'] }} au {{ stage['date_fin'] }}</p>
+					<p>du {{ stage.dateDebut | date("d/m/Y") }} <br /> au {{ stage.dateFin | date("d/m/Y") }}</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<p>contact : {{ stage['contact'] }}</p>
+					<p>{{ stage.entreprise.site }}</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 	<div class="col-md-1">
-			</div>
+	</div>
 </div>
 	
 {% endblock %}

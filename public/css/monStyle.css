@@ -1,3 +1,29 @@
+/* ASPECT GENERAL */
+[class*=-row-pair] [class*=-col-pair]
+{
+	background-color: dimgrey;
+}
+
+[class*=-row-pair] [class*=-col-impair]
+{
+	background-color: grey;
+}
+
+[class*=-row-impair] [class*=-col-pair]
+{
+	background-color: darkgrey;
+}
+
+[class*=-row-impair] [class*=-col-impair]
+{
+	background-color: silver;
+}
+
+/*[class*=col-]
+{
+	border: 1px solid blue;
+}*/
+
 /*EN-TETE*/
 .en-tete
 {
@@ -57,7 +83,6 @@
 .liste-stages-titre
 {
 	border-left: 1px solid darkslategray;
-	border-right: 1px solid darkslategray;
 }
 
 .liste-stages-titres .col-2 p
@@ -84,35 +109,6 @@
 .liste-stages a:hover
 {
 	text-decoration: none;
-}
-
-.stage-row-pair .stage-col-pair
-{
-	background-color: dimgrey;
-}
-
-.stage-row-pair .stage-col-impair
-{
-	background-color: grey;
-}
-
-.stage-row-impair .stage-col-pair
-{
-	background-color: darkgrey;
-}
-
-.stage-row-impair .stage-col-impair
-{
-	background-color: silver;
-}
-
-/* LISTE DES STAGES PAR ENTREPRISES */
-.nom-entreprise
-{
-	border: 1px solid black;
-	padding: 5px;
-	border-radius: 15px;
-	text-align: center;
 }
 
 
