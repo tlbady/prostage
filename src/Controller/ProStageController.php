@@ -44,7 +44,7 @@ class ProstageController extends AbstractController
      * @Route("/entreprises/{id}", name="entreprise_stages")
      */
     public function entreprise_stages(Entreprise $entreprise, StageRepository $repositoryStage) // Utilisation du mécanisme d'injection de dépendances
-    // Symfony crée un objet Entreprise en utilisant l'objet dont l'id est passée en paramètre'
+    // Symfony crée un objet Entreprise en utilisant l'objet dont l'id est passée dans l'url
     {
         $listeStages = $repositoryStage->findByEntreprise($entreprise);
         
@@ -70,7 +70,7 @@ class ProstageController extends AbstractController
      * @Route("/formations/{id}", name="formation_stages")
      */
     public function formation_stages(Formation $formation, StageRepository $repositoryStage) // Utilisation du mécanisme d'injection de dépendances
-    // Symfony crée un objet Formation en utilisant l'objet dont l'id est passée en paramètre'
+    // Symfony crée un objet Formation en utilisant l'objet dont l'id est passée dans l'url
     {
         $listeStages = $repositoryStage->findById($formation->getStages()->getValues());
         
@@ -84,7 +84,7 @@ class ProstageController extends AbstractController
      * @Route("/stages/{id}", name="stages")
      */
     public function stages(Stage $stage) // Utilisation du mécanisme d'injection de dépendances
-    // Symfony crée un objet Stage en utilisant l'objet dont l'id est passée en paramètre'
+    // Symfony crée un objet Stage en utilisant l'objet dont l'id est passée dans l'url
     {
         return $this->render('prostage/stages.html.twig', [
             'stage' => $stage
