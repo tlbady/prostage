@@ -21,7 +21,7 @@
 			<div class="col-md-12">
 
 				{% set numero = 'impair' %}
-				{% for formation in listeFormations %}
+				{% for formation in listeFormations if formation.stages | length > 0 %}
 					<a href="/formations/{{ formation.id }}">
 						<div class="row formation-row-{{ numero }}">
 						<div class="col-12 formation-col-impair">
